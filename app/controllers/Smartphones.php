@@ -2,9 +2,22 @@
 
 class Smartphones extends BaseController
 {
+    private $smartphonesModel;
+
+    public function __construct()
+    {
+         $this->smartphonesModel = $this->model('SmartphonesModel');
+    }
 
     public function index()
     {
+       /**
+        * Hier halen we alle smartphones op uit de database
+        */
+       $result = $this->smartphonesModel->getAllSmartphones();
+       
+       var_dump($result);
+       
        /**
         * Het $data-array geeft informatie mee aan de view-pagina
         */

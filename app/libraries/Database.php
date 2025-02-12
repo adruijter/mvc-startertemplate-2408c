@@ -48,11 +48,16 @@ class Database
         }
     }
 
+    /** Deze method maakt de sql-query klaar voor gebruik */
     public function query($sql)
     {
         $this->statement = $this->dbHandler->prepare($sql);
     }
 
+    /** 
+     * Deze method haalt de gegevens op van je select-query
+     * Je gebruikt deze method resultSet() als je meerdere rijen verwacht
+     */
     public function resultSet()
     {
         $this->statement->execute();
