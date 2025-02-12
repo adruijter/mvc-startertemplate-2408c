@@ -15,6 +15,7 @@ class SmartphonesModel
         $sql = 'SELECT  SMPS.Merk
                        ,SMPS.Model
                        ,SMPS.Prijs
+                       ,SMPS.Geheugen
 
                 FROM   Smartphones as SMPS
                 

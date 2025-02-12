@@ -20,6 +20,7 @@
                         <th>Merk</th>
                         <th>Model</th>
                         <th>Prijs</th>
+                        <th>Geheugen (GB)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +29,7 @@
                             <td><?= $smartphone->Merk; ?></td>
                             <td><?= $smartphone->Model; ?></td>
                             <td><?= $smartphone->Prijs; ?></td>
+                            <td><?= $smartphone->Geheugen; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
