@@ -19,6 +19,7 @@
                     <tr>
                         <th>Merk</th>
                         <th>Model</th>
+                        <th>Prijs</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +27,7 @@
                         <tr>
                             <td><?= $smartphone->Merk; ?></td>
                             <td><?= $smartphone->Model; ?></td>
+                            <td><?= $smartphone->Prijs; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

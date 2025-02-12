@@ -14,10 +14,11 @@ class SmartphonesModel
     {
         $sql = 'SELECT  SMPS.Merk
                        ,SMPS.Model
+                       ,SMPS.Prijs
 
                 FROM   Smartphones as SMPS
                 
-                ORDER BY SMPS.Merk ASC';
+                ORDER BY SMPS.Prijs DESC';
 
         $this->db->query($sql);
 
