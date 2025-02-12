@@ -16,13 +16,12 @@ class Smartphones extends BaseController
         */
        $result = $this->smartphonesModel->getAllSmartphones();
        
-       var_dump($result);
-       
        /**
         * Het $data-array geeft informatie mee aan de view-pagina
         */
        $data = [
-            'title' => 'Overzicht smartphones'
+            'title' => 'Overzicht smartphones',
+            'smartphones' => $result
        ];
 
          /**

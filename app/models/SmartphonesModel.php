@@ -12,8 +12,12 @@ class SmartphonesModel
 
     public function getAllSmartphones()
     {
-        $sql = 'SELECT *
-                FROM Smartphones';
+        $sql = 'SELECT  SMPS.Merk
+                       ,SMPS.Model
+
+                FROM   Smartphones as SMPS
+                
+                ORDER BY SMPS.Merk ASC';
 
         $this->db->query($sql);
 
