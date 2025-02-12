@@ -19,15 +19,13 @@
                     <tr>
                         <th>Merk</th>
                         <th>Model</th>
-                        <th>Prijs</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach($data['smartphones'] as $smartphone) : ?>
                         <tr>
-                            <td><?= $smartphone->merk; ?></td>
-                            <td><?= $smartphone->model; ?></td>
-                            <td><?= $smartphone->prijs; ?></td>
+                            <td><?= $smartphone->Merk; ?></td>
+                            <td><?= $smartphone->Model; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
