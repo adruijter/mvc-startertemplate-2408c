@@ -4,16 +4,16 @@
 
     <div class="row">
 
-        <div class="col-2"></div>
-        <div class="col-8">        
+        <div class="col-1"></div>
+        <div class="col-10">        
             <h3><?= $data['title']; ?></h3>
         </div>
-        <div class="col-2"></div>
+        <div class="col-1"></div>
     </div>
     <!-- begin tabel -->
     <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-1"></div>
+        <div class="col-10">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -22,6 +22,9 @@
                         <th>Prijs</th>
                         <th>Geheugen (GB)</th>
                         <th>Besturingsysteem</th>
+                        <th>Schermgrootte</th>
+                        <th>Releasedatum</th>
+                        <th>MegaPixels</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,12 +35,15 @@
                             <td><?= $smartphone->Prijs; ?></td>
                             <td><?= $smartphone->Geheugen; ?></td>
                             <td><?= $smartphone->Besturingssysteem; ?></td>
+                            <td><?= $smartphone->Schermgrootte; ?></td>
+                            <td><?= $smartphone->Releasedatum; ?></td>
+                            <td><?= $smartphone->MegaPixels; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
-        <div class="col-2"></div>
+        <div class="col-1"></div>
     </div>
     <!-- eind tabel -->
 

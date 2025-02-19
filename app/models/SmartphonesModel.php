@@ -17,10 +17,17 @@ class SmartphonesModel
                        ,SMPS.Prijs
                        ,SMPS.Geheugen
                        ,SMPS.Besturingssysteem
+                       ,CONCAT(SMPS.Schermgrootte, " inch") as Schermgrootte
+                       ,DATE_FORMAT(SMPS.Releasedatum, "%d/%m/%Y") as Releasedatum
+                       ,CONCAT(SMPS.MegaPixels, " MP") as MegaPixels
 
                 FROM   Smartphones as SMPS
                 
-                ORDER BY SMPS.Prijs DESC, SMPS.Geheugen DESC';
+                ORDER BY SMPS.Schermgrootte DESC
+                        ,SMPS.Prijs DESC
+                        ,SMPS.Geheugen DESC
+                        ,SMPS.Releasedatum DESC
+                        ,SMPS.MegaPixels DESC';
 
         $this->db->query($sql);
 
