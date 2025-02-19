@@ -16,10 +16,11 @@ class SmartphonesModel
                        ,SMPS.Model
                        ,SMPS.Prijs
                        ,SMPS.Geheugen
+                       ,SMPS.Besturingssysteem
 
                 FROM   Smartphones as SMPS
                 
-                ORDER BY SMPS.Prijs DESC';
+                ORDER BY SMPS.Prijs DESC, SMPS.Geheugen DESC';
 
         $this->db->query($sql);
 
