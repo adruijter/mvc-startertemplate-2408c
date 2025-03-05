@@ -19,25 +19,15 @@
                     <tr>
                         <th>Merk</th>
                         <th>Model</th>
-                        <th>Prijs</th>
-                        <th>Geheugen (GB)</th>
-                        <th>Besturingsysteem</th>
-                        <th>Schermgrootte</th>
-                        <th>Releasedatum</th>
-                        <th>MegaPixels</th>
+                        <th>Type</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($data['smartphones'] as $smartphone) : ?>
+                    <?php foreach($data['sneakers'] as $sneaker) : ?>
                         <tr>
-                            <td><?= $smartphone->Merk; ?></td>
-                            <td><?= $smartphone->Model; ?></td>
-                            <td><?= $smartphone->Prijs; ?></td>
-                            <td><?= $smartphone->Geheugen; ?></td>
-                            <td><?= $smartphone->Besturingssysteem; ?></td>
-                            <td><?= $smartphone->Schermgrootte; ?></td>
-                            <td><?= $smartphone->Releasedatum; ?></td>
-                            <td><?= $smartphone->MegaPixels; ?></td>
+                            <td><?= $sneaker->Merk; ?></td>
+                            <td><?= $sneaker->Model; ?></td>
+                            <td><?= $sneaker->Type; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

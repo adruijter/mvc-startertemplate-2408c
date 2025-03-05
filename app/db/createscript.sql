@@ -96,7 +96,8 @@ CREATE TABLE Sneakers
 (
      Id                 SMALLINT        UNSIGNED    NOT NULL        AUTO_INCREMENT
     ,Merk               VARCHAR(50)                 NOT NULL
-    ,Model              VARCHAR(50)                 NOT NULL	
+    ,Model              VARCHAR(50)                 NOT NULL
+    ,Type               VARCHAR(25)                 NOT NULL	
     ,IsActief           BIT                         NOT NULL        DEFAULT 1
     ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
     ,DatumAangemaakt    DATETIME(6)                 NOT NULL
@@ -117,12 +118,13 @@ INSERT INTO Sneakers
 (
       Merk
      ,Model
+     ,Type
      ,IsActief
      ,Opmerking
      ,DatumAangemaakt
      ,DatumGewijzigd
 )
 VALUES
- ('Nike', 'Air Jordan 1', 1, NULL, SYSDATE(6), SYSDATE(6)),
- ('Adidas', 'Yeezy Boost 350', 1, NULL, SYSDATE(6), SYSDATE(6)),
- ('New Balance', 'Pixel 9 Pro', 1, NULL, SYSDATE(6), SYSDATE(6));
+ ('Nike', 'Air Jordan 1', 'Hardloop', 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Adidas', 'Yeezy Boost 350', 'Basketbal', 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('New Balance', 'Pixel 9 Pro', 'Casual', 1, NULL, SYSDATE(6), SYSDATE(6));
