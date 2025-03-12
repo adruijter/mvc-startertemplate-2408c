@@ -120,7 +120,7 @@ INSERT INTO Sneakers
      ,Model
      ,Type
      ,IsActief
-     ,Opmerkingsmartphones
+     ,Opmerking
      ,DatumAangemaakt
      ,DatumGewijzigd
 )
