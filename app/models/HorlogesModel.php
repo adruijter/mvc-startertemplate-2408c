@@ -12,13 +12,13 @@ class HorlogesModel
 
     public function getAllHorloges()
     {
-        $sql = 'SELECT  HRLS.Merk
+        $sql = "SELECT  HRLS.Merk
                        ,HRLS.Model
-                       ,HRLS.Prijs
+                       ,FORMAT(HRLS.Prijs, 0, 'de_DE') as Prijs
 
                 FROM   Horloges as HRLS
                 
-                ORDER BY HRLS.Prijs DESC';
+                ORDER BY HRLS.Prijs DESC";
 
         $this->db->query($sql);
 
