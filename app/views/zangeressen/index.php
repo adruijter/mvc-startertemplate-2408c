@@ -22,6 +22,7 @@
                         <th>Land</th>
                         <th>Mobiel</th>
                         <th>Leeftijd</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +33,7 @@
                             <td><?= $zangeres->Land; ?></td>
                             <td><?= $zangeres->Mobiel; ?></td>
                             <td><?= $zangeres->Leeftijd; ?></td>
+                            <td><a href="<?= URLROOT; ?>/zangeressen/delete/<?= $zangeres->Id; ?>"><i class="bi bi-trash3-fill text-dark"></i></a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
