@@ -10,6 +10,16 @@
         </div>
         <div class="col-1"></div>
     </div>
+
+    <div class="row mt-3 mb-3">
+
+        <div class="col-1"></div>
+        <div class="col-10 text-begin text-danger">        
+            <a href="<?= URLROOT; ?>/zangeressen/create" class="btn btn-warning" role="button">Nieuwe zangeres</a>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
     <!-- begin tabel -->
     <div class="row">
         <div class="col-1"></div>
@@ -22,6 +32,7 @@
                         <th>Land</th>
                         <th>Mobiel</th>
                         <th>Leeftijd</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +43,11 @@
                             <td><?= $zangeres->Land; ?></td>
                             <td><?= $zangeres->Mobiel; ?></td>
                             <td><?= $zangeres->Leeftijd; ?></td>
+                            <td>
+                                <a href="<?= URLROOT; ?>/zangeressen/delete/<?= $zangeres->Id; ?>">
+                                    <i class="bi bi-trash3-fill text-dark"></i>
+                                </a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
