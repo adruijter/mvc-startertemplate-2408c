@@ -40,6 +40,10 @@ class Zangeressen extends BaseController
 
     public function create()
     {
+          if ($SERVER_REQUEST = "POST") {
+               var_dump($_POST);
+          }
+          
           $data = [
                'title' => 'Nieuwe zangeres toevoegen',
           ];

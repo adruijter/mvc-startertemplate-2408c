@@ -39,4 +39,19 @@ class ZangeressenModel
         return $this->db->execute();
     }
 
+    public function create($data)
+    {
+        $sql = "INSERT INTO Zangeres (Naam, Nettowaarde, Land, Mobiel, Leeftijd)
+                VALUES (:naam, :nettowaarde, :land, :mobiel, :leeftijd)";
+
+        $this->db->query($sql);
+        $this->db->bind(':naam', $data['naam']);
+        $this->db->bind(':nettowaarde', $data['nettowaarde']);
+        $this->db->bind(':land', $data['land']);
+        $this->db->bind(':mobiel', $data['mobiel']);
+        $this->db->bind(':leeftijd', $data['leeftijd']);
+
+        return $this->db->execute();
+    }
+
 }
