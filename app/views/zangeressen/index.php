@@ -33,6 +33,7 @@
                         <th>Mobiel</th>
                         <th>Leeftijd</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,10 +45,16 @@
                             <td><?= $zangeres->Mobiel; ?></td>
                             <td><?= $zangeres->Leeftijd; ?></td>
                             <td>
+                                <a href="<?= URLROOT; ?>/zangeressen/update/<?= $zangeres->Id; ?>">
+                                    <i class="bi bi-pencil-square text-success"></i>
+                                </a>
+                            </td>
+                            <td>
                                 <a href="<?= URLROOT; ?>/zangeressen/delete/<?= $zangeres->Id; ?>">
                                     <i class="bi bi-trash3-fill text-danger"></i>
                                 </a>
                             </td>
+                            
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

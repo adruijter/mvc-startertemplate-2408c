@@ -56,4 +56,19 @@ class ZangeressenModel
         return $this->db->execute();
     }
 
+    public function getZangeresById($Id)
+    {
+        $sql = "SELECT  Naam
+                       ,Nettowaarde
+                       ,Land
+                       ,Mobiel
+                       ,Leeftijd
+                FROM   zangeres
+                WHERE  Id = :id";
+
+        $this->db->query($sql);
+        $this->db->bind(':id', $Id, PDO::PARAM_INT);
+        return $this->db->execute();
+    }
+
 }
