@@ -58,7 +58,8 @@ class ZangeressenModel
 
     public function getZangeresById($Id)
     {
-        $sql = "SELECT  Naam
+        $sql = "SELECT  Id
+                       ,Naam
                        ,Nettowaarde
                        ,Land
                        ,Mobiel
@@ -68,7 +69,7 @@ class ZangeressenModel
 
         $this->db->query($sql);
         $this->db->bind(':id', $Id, PDO::PARAM_INT);
-        return $this->db->execute();
+        return $this->db->single();
     }
 
 }
