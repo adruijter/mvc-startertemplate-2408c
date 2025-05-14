@@ -59,8 +59,18 @@ class Zangeressen extends BaseController
           $this->view('zangeressen/create', $data);
     }
 
-    public function update($Id)
+    public function update($Id = NULL)
     {
+          if ($_SERVER['REQUEST_METHOD'] == "POST") 
+          {
+               $result = $this->zangeressenModel->updateZangeres($_POST);
+
+               echo "<div class='alert alert-success text-center'><h4>De wijziging is doorgevoerd</h4></div>";
+
+               header("Refresh: 3; url=" . URLROOT . "/zangeressen/index");
+               exit();
+          }
+
           $result = $this->zangeressenModel->getZangeresById($Id);
 
           $data = [
