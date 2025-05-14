@@ -19,23 +19,23 @@
             <form action="<?= URLROOT; ?>/zangeressen/create" method="post">
                 <div class="mb-3">
                     <label for="name" class="form-label">Naam</label>
-                    <input name="naam" type="text" class="form-control" id="name">
+                    <input name="naam" type="text" class="form-control" id="name" required>
                 </div>
                 <div class="mb-3">
                     <label for="nettowaarde" class="form-label">Nettowaarde (miljoen)</label>
-                    <input name="nettowaarde" type="text" class="form-control" id="nettowaarde">
+                    <input name="nettowaarde" type="text" class="form-control" id="nettowaarde" required>
                 </div>
                 <div class="mb-3">
                     <label for="land" class="form-label">land</label>
-                    <input name="land" type="text" class="form-control" id="land">
+                    <input name="land" type="text" class="form-control" id="land" required>
                 </div>
                 <div class="mb-3">
                     <label for="mobiel" class="form-label">mobiel</label>
-                    <input name="mobiel" type="tel" class="form-control" id="mobiel">
+                    <input name="mobiel" type="tel" class="form-control" id="mobiel" required placeholder="+31 6 1234 56 78" pattern="\+31 6 \d{4} \d{2} \d{2}">
                 </div>
                 <div class="mb-3">
                     <label for="leeftijd" class="form-label">leeftijd</label>
-                    <input name="leeftijd" type="text" class="form-control" id="leeftijd">
+                    <input name="leeftijd" type="text" class="form-control" id="leeftijd" required>
                 </div>                
                 
                 <button type="submit" class="btn btn-primary">Verstuur</button>
