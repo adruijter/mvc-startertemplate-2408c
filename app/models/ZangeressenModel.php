@@ -21,7 +21,9 @@ class ZangeressenModel
 
                 FROM   Zangeres as ZGRS
                 
-                ORDER BY ZGRS.Leeftijd DESC';
+                ORDER BY ZGRS.Nettowaarde DESC
+                
+                LIMIT 5';
 
         $this->db->query($sql);
 
@@ -45,11 +47,11 @@ class ZangeressenModel
                 VALUES (:naam, :nettowaarde, :land, :mobiel, :leeftijd)";
 
         $this->db->query($sql);
-        $this->db->bind(':naam', $data['naam']);
-        $this->db->bind(':nettowaarde', $data['nettowaarde']);
-        $this->db->bind(':land', $data['land']);
-        $this->db->bind(':mobiel', $data['mobiel']);
-        $this->db->bind(':leeftijd', $data['leeftijd']);
+        $this->db->bind(':naam', $data['naam'], PDO::PARAM_STR);
+        $this->db->bind(':nettowaarde', $data['nettowaarde'], PDO::PARAM_INT);
+        $this->db->bind(':land', $data['land'], PDO::PARAM_STR);
+        $this->db->bind(':mobiel', $data['mobiel'], PDO::PARAM_STR);
+        $this->db->bind(':leeftijd', $data['leeftijd'], PDO::PARAM_INT);
 
         return $this->db->execute();
     }

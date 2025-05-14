@@ -10,7 +10,6 @@
         </div>
         <div class="col-3"></div>
     </div>
-
     
     <!-- begin tabel -->
     <div class="row">

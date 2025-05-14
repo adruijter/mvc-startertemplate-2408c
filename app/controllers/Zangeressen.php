@@ -40,10 +40,12 @@ class Zangeressen extends BaseController
 
     public function create()
     {
-          if ($SERVER_REQUEST = "POST") {
-               var_dump($_POST);
+          if ($_SERVER["REQUEST_METHOD"] == "POST") {
+               $this->zangeressenModel->create($_POST);
+               echo '<div class="alert alert-success text-center" role="alert"><h4>Zangeres toegevoegd</h4></div>';
+               header('Refresh: 3; URL=' . URLROOT . '/zangeressen/index');
           }
-          
+
           $data = [
                'title' => 'Nieuwe zangeres toevoegen',
           ];
