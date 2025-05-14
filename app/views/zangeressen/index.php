@@ -5,7 +5,7 @@
     <div class="row">
 
         <div class="col-1"></div>
-        <div class="col-10 text-center text-danger">        
+        <div class="col-10 text-begin text-primary">        
             <h3><?= $data['title']; ?></h3>
         </div>
         <div class="col-1"></div>
@@ -45,7 +45,7 @@
                             <td><?= $zangeres->Leeftijd; ?></td>
                             <td>
                                 <a href="<?= URLROOT; ?>/zangeressen/delete/<?= $zangeres->Id; ?>">
-                                    <i class="bi bi-trash3-fill text-dark"></i>
+                                    <i class="bi bi-trash3-fill text-danger"></i>
                                 </a>
                             </td>
                         </tr>

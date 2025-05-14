@@ -5,7 +5,7 @@
     <div class="row mb-3">
 
         <div class="col-3"></div>
-        <div class="col-6 text-begin text-danger">        
+        <div class="col-6 text-begin text-warning">        
             <h3><?= $data['title']; ?></h3>
         </div>
         <div class="col-3"></div>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="mobiel" class="form-label">mobiel</label>
-                    <input name="mobiel" type="text" class="form-control" id="mobiel">
+                    <input name="mobiel" type="tel" class="form-control" id="mobiel">
                 </div>
                 <div class="mb-3">
                     <label for="leeftijd" class="form-label">leeftijd</label>
