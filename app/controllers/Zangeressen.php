@@ -9,7 +9,7 @@ class Zangeressen extends BaseController
          $this->zangeressenModel = $this->model('ZangeressenModel');
     }
 
-    public function index()
+    public function index($message = 'none')
     {
        /**
         * Hier halen we alle smartphones op uit de database
@@ -21,7 +21,8 @@ class Zangeressen extends BaseController
         */
        $data = [
             'title' => 'Top 5 rijkste zangeressen ter wereld',
-            'zangeressen' => $result
+            'zangeressen' => $result,
+            'message' => $message
        ];
 
          /**
@@ -34,12 +35,20 @@ class Zangeressen extends BaseController
     public function delete($Id)
     {
           $result = $this->zangeressenModel->delete($Id);
-          header('Location: ' . URLROOT . '/zangeressen/index');
+          
+          header('Refresh:3 ; url=' . URLROOT . '/zangeressen/index');
+
+          $this->index('flex');          
     }
 
 
     public function create()
     {
+          $data = [
+               'title' => 'Nieuwe zangeres toevoegen',
+               'message' => 'none'
+          ];
+          
           if ($_SERVER["REQUEST_METHOD"] == "POST") {
                
                if (empty($_POST['naam']) || empty($_POST['nettowaarde']) || empty($_POST['land']) || empty($_POST['mobiel']) || empty($_POST['leeftijd'])) {
@@ -47,36 +56,38 @@ class Zangeressen extends BaseController
                     header('Refresh: 3; URL=' . URLROOT . '/zangeressen/create');
                     exit;
                }
-               $this->zangeressenModel->create($_POST);
-               echo '<div class="alert alert-success text-center" role="alert"><h4>Zangeres toegevoegd</h4></div>';
+               $result = $this->zangeressenModel->create($_POST);
+
+               $data['message'] = 'flex';
+
                header('Refresh: 3; URL=' . URLROOT . '/zangeressen/index');
           }
 
-          $data = [
-               'title' => 'Nieuwe zangeres toevoegen',
-          ];
-
+          
           $this->view('zangeressen/create', $data);
     }
 
     public function update($Id = NULL)
     {
-          if ($_SERVER['REQUEST_METHOD'] == "POST") 
-          {
-               $result = $this->zangeressenModel->updateZangeres($_POST);
-
-               echo "<div class='alert alert-success text-center'><h4>De wijziging is doorgevoerd</h4></div>";
-
-               header("Refresh: 3; url=" . URLROOT . "/zangeressen/index");
-               exit();
-          }
-
-          $result = $this->zangeressenModel->getZangeresById($Id);
-
           $data = [
                'title' => 'Wijzig de zangeres',
-               'zangeres' => $result
+               'message' => 'none'
           ];
+          
+          if ($_SERVER['REQUEST_METHOD'] == "POST") 
+          {
+               $Id = $_POST['Id'];
+
+               $result = $this->zangeressenModel->updateZangeres($_POST);
+
+               $data['message'] = 'flex';
+
+               header("Refresh: 3; url=" . URLROOT . "/zangeressen/index");
+          }
+
+          $data['zangeres'] = $this->zangeressenModel->getZangeresById($Id);
+
+          
 
           $this->view('zangeressen/update', $data);
     }

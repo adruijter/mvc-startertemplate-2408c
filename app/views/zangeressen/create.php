@@ -2,8 +2,19 @@
 
 <div class="container mt-3">
 
+    <!-- Weergeven melding van succes of geen success -->
+    <div class="row mb-3" style="display:<?= $data['message']; ?>;">
+        <div class="col-3"></div>
+        <div class="col-6 text-begin text-warning">        
+            <div class="alert alert-success" role="alert">
+                Zangeres is toegevoegd
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    
+    <!-- Weergeven titel -->
     <div class="row mb-3">
-
         <div class="col-3"></div>
         <div class="col-6 text-begin text-warning">        
             <h3><?= $data['title']; ?></h3>
