@@ -2,8 +2,17 @@
 
 <div class="container mt-3">
 
-    <div class="row mb-3">
+    <div class="row mb-3" style="display:<?= $data['message']; ?>">
+        <div class="col-3"></div>
+        <div class="col-6 text-begin text-warning">        
+            <div class="alert alert-primary" role="alert">
+                Record is toegevoegd
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
 
+    <div class="row mb-3">
         <div class="col-3"></div>
         <div class="col-6 text-begin text-warning">        
             <h3><?= $data['title']; ?></h3>
