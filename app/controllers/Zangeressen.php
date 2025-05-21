@@ -58,7 +58,6 @@ class Zangeressen extends BaseController
 
           $this->view('zangeressen/create', $data);
     }
-
     public function update($Id = NULL)
     {
           if ($_SERVER['REQUEST_METHOD'] == "POST") 
