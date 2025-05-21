@@ -5,7 +5,7 @@
     <div class="row mb-3" style="display:<?= $data['message']; ?>">
         <div class="col-3"></div>
         <div class="col-6 text-begin text-warning">        
-            <div class="alert alert-primary" role="alert">
+            <div class="alert alert-success" role="alert">
                 Record is toegevoegd
             </div>
         </div>
@@ -24,27 +24,26 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-
             <form action="<?= URLROOT; ?>/zangeressen/create" method="post">
                 <div class="mb-3">
                     <label for="name" class="form-label">Naam</label>
-                    <input name="naam" type="text" class="form-control" id="name" required>
+                    <input name="naam" type="text" class="form-control" id="name" value="<?= $_POST['naam'] ?? ''; ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="nettowaarde" class="form-label">Nettowaarde (miljoen)</label>
-                    <input name="nettowaarde" type="text" class="form-control" id="nettowaarde" required>
+                    <input name="nettowaarde" type="text" class="form-control" id="nettowaarde" value="<?= $_POST['nettowaarde'] ?? ''; ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="land" class="form-label">land</label>
-                    <input name="land" type="text" class="form-control" id="land" required>
+                    <input name="land" type="text" class="form-control" id="land" value="<?= $_POST['land'] ?? ''; ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="mobiel" class="form-label">mobiel</label>
-                    <input name="mobiel" type="tel" class="form-control" id="mobiel" required placeholder="+31 6 1234 56 78" pattern="\+31 6 \d{4} \d{2} \d{2}">
+                    <input name="mobiel" type="tel" class="form-control" id="mobiel" value="<?= $_POST['mobiel'] ?? ''; ?>" required placeholder="+31 6 1234 56 78" pattern="\+31 6 \d{4} \d{2} \d{2}">
                 </div>
                 <div class="mb-3">
                     <label for="leeftijd" class="form-label">leeftijd</label>
-                    <input name="leeftijd" type="text" class="form-control" id="leeftijd" required>
+                    <input name="leeftijd" type="text" class="form-control" id="leeftijd" value="<?= $_POST['leeftijd'] ?? ''; ?>" required>
                 </div>                
                 
                 <button type="submit" class="btn btn-primary">Verstuur</button>
