@@ -2,7 +2,7 @@
 
 <div class="container mt-3">
 
-    <div class="row">
+    <div class="row text-success">
 
         <div class="col-1"></div>
         <div class="col-10">        

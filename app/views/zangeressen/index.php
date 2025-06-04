@@ -2,7 +2,7 @@
 
 <div class="container mt-3">
 
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-1"></div>
         <div class="col-10 text-begin text-primary">        
             <h3><?= $data['title']; ?></h3>

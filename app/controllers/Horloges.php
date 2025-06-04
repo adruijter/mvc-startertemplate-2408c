@@ -20,7 +20,7 @@ class Horloges extends BaseController
         * Het $data-array geeft informatie mee aan de view-pagina
         */
        $data = [
-            'title' => 'Mooiste horloges',
+            'title' => 'Top 5 mooiste horloges',
             'horloges' => $result
        ];
 

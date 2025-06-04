@@ -58,7 +58,9 @@ class Zangeressen extends BaseController
                }
 
                $data['message'] = 'flex';
+
                $this->zangeressenModel->create($_POST);
+               
                header('Refresh: 3; URL=' . URLROOT . '/zangeressen/index');
           }          
 
